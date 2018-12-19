@@ -14,7 +14,7 @@ class Driver
   end
 
 #Gets all the rides associated with a driver
-  def allrides
+  def rides
     Ride.all.select do |ride|
        ride.driver == self
     end
@@ -22,8 +22,8 @@ class Driver
 
 #Get all the passsengers associated with this driver
   def passengers
-     self.allrides.map do |ride|
-       ride.passenger.name
+     rides.map do |ride|
+       ride.passenger
     end
   end
 

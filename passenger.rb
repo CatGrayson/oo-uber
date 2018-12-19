@@ -15,11 +15,12 @@ class Passenger
 
 #Get all the drivers associated with that passenger
   def drivers
-    #First, I have to get all my rides
+    #First get all of your rides
      myrides = Ride.all.select do |ride|
        ride.passenger == self
      end
 
+     #Then map over your rides to get the drivers associated with that ride
      myrides.map do |ride|
          ride.driver
      end
